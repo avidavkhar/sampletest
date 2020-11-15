@@ -1,0 +1,57 @@
+<h4 class="card-title">
+    Payment Information</h4>
+<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && submit()" novalidate>
+    <div class="form-group">
+        <label for="creditCardNumber">Card number</label>
+        <input type="text" name="creditCardNumber" class="form-control" [(ngModel)]="creditCard.creditCardNumber" #creditCardNumber="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && creditCardNumber.invalid }" required>
+        <div *ngIf="f.submitted && creditCardNumber.invalid" class=".form-creditCardNumber-error">
+            <div class="form-error form-creditCardNumber-error">
+                Credit card number is required
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cardholder">Card holder</label>
+        <input type="cardholder" name="cardholder" class="form-control" [(ngModel)]="creditCard.cardholder" #cardholder="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && cardholder.invalid }" required>
+        <div *ngIf="f.submitted && cardholder.invalid" class=".form-cardholder-error">
+            <div class="form-error form-cardholder-error">
+                Card holder is required
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="expirationDate">Expiration date</label>
+        <input ngModel class="form-control" name="expirationDate" type="date" [(ngModel)]="creditCard.expirationDate" #expirationDate="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && expirationDate.invalid }" [min]="minDate | date:'yyyy-MM-dd'" required>
+        <div *ngIf="f.submitted && expirationDate.invalid" class=".form-expirationDate-error">
+            <div class="form-error form-expirationDate-error">
+                Expiration date is required
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="securityCode">Security code</label>
+        <input ngModel class="form-control" name="securityCode" type="text" [(ngModel)]="creditCard.securityCode" #securityCode="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && securityCode.invalid }" maxlength="3" minlength="3">
+        <div *ngIf="f.submitted && securityCode.invalid" class=".form-securityCode-error">
+            <div *ngIf="securityCode.errors.minlength" class="form-error form-securityCode-error">
+                Security code should be of 3 digits
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount</label>
+        <input ngModel class="form-control" name="amount" type="number" [(ngModel)]="creditCard.amount" #amount="ngModel" [ngClass]="{ 'is-invalid': f.submitted && amount.invalid }"
+            pattern="^[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*$" required>
+        <div *ngIf="f.submitted && amount.invalid">
+            <div class="form-error form-amount-error">
+                Amount is required and should be greater than 0
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="disabled" class="btn btn-primary btn-block">Submit Payment</button>
+    </div>
+</form>

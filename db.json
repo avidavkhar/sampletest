@@ -1,0 +1,9 @@
+{
+  "postPayment": {
+    "creditCardNumber": "211212",
+    "cardholder": "ddssdd",
+    "expirationDate": "2020-11-16",
+    "securityCode": "123",
+    "amount": 20
+  }
+}

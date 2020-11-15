@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome Headless 86.0.4240.198 (Windows 10)" package="" timestamp="2020-11-15T17:29:28" id="0" hostname="Hp" tests="5" errors="0" failures="0" time="0.253">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/86.0.4240.198 Safari/537.36"/>
+  </properties>
+  <testcase name="PaymentFormComponent should validate amount is required" time="0.147" classname="PaymentFormComponent"/>
+  <testcase name="PaymentFormComponent has a form control" time="0.035" classname="PaymentFormComponent"/>
+  <testcase name="PaymentFormComponent should validate creditCardNumber is required" time="0.024" classname="PaymentFormComponent"/>
+  <testcase name="PaymentFormComponent should validate cardholder is required" time="0.023" classname="PaymentFormComponent"/>
+  <testcase name="PaymentFormComponent should validate expirationDate is required" time="0.024" classname="PaymentFormComponent"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
